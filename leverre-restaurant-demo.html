@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Verre Restaurant & Lounge — Solo Baru</title>
+<meta name="description" content="Le Verre Restaurant & Lounge, fine dining dan lounge premium di Solo Baru. Dine-in, Takeout, Romantic Dinner, Birthday Package.">
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#FFFFFF;
+  --noir2:#F7F4EE;
+  --noir3:#EEEAE0;
+  --cream:#1A1208;
+  --cream2:#2C1F0E;
+  --cream3:#3D2E18;
+  --gold:#B8870A;
+  --gold2:#C9980E;
+  --gold3:#8A6508;
+  --white:#FFFFFF;
+  --line:rgba(184,135,10,.18);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--noir);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+*{cursor:none!important;}
+#c{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);left:-50px;top:-50px;}
+#cr{position:fixed;width:26px;height:26px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);left:-50px;top:-50px;opacity:.35;transition:left .1s,top .1s;}
+
+/* ══ NAV ══ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-logo{
+  font-family:'Bodoni Moda',serif;
+  font-size:19px;font-weight:400;
+  color:var(--cream);letter-spacing:.06em;
+}
+.nav-logo em{font-style:italic;color:var(--gold);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{
+  font-size:10px;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(26,18,8,.4);text-decoration:none;transition:color .3s;
+}
+.nav-links a:hover{color:var(--gold);}
+.nav-res{
+  font-size:10px;letter-spacing:.25em;text-transform:uppercase;
+  border:1px solid var(--gold);color:var(--gold);
+  padding:10px 26px;text-decoration:none;transition:all .3s;
+}
+.nav-res:hover{background:var(--gold);color:var(--noir);}
+
+/* ══ HERO: full-bleed dark with big centered type ══ */
+.hero{
+  min-height:100vh;padding-top:68px;
+  background:var(--noir2);
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+/* art-deco corner ornaments */
+.hero-corner{position:absolute;width:120px;height:120px;opacity:.15;}
+.hero-corner.tl{top:80px;left:48px;border-top:1px solid var(--gold);border-left:1px solid var(--gold);}
+.hero-corner.tr{top:80px;right:48px;border-top:1px solid var(--gold);border-right:1px solid var(--gold);}
+.hero-corner.bl{bottom:100px;left:48px;border-bottom:1px solid var(--gold);border-left:1px solid var(--gold);}
+.hero-corner.br{bottom:100px;right:48px;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold);}
+
+/* subtle dot grid */
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(184,135,10,.09) 1px, transparent 1px);
+  background-size:40px 40px;
+  pointer-events:none;
+}
+/* vignette */
+.hero-vignette{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 70% at 50% 50%, rgba(255,255,255,.0) 30%, rgba(240,230,210,.3) 100%);
+  pointer-events:none;
+}
+
+.hero-body{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:60px 48px;
+  position:relative;z-index:2;
+}
+.hero-tag{
+  font-size:9px;letter-spacing:.55em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:36px;
+  display:flex;align-items:center;gap:18px;
+}
+.hero-tag::before,.hero-tag::after{content:'';width:48px;height:1px;background:var(--gold);opacity:.5;}
+.hero-name{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(16px,2vw,22px);
+  font-weight:400;font-style:italic;
+  color:var(--gold);letter-spacing:.3em;
+  text-transform:uppercase;margin-bottom:12px;
+}
+.hero-h1{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(64px,10vw,150px);
+  font-weight:400;line-height:.9;
+  color:var(--cream);letter-spacing:-.02em;
+  margin-bottom:32px;
+}
+.hero-h1 em{font-style:italic;color:var(--gold2);}
+.hero-rule{
+  display:flex;align-items:center;gap:14px;
+  justify-content:center;margin-bottom:32px;
+}
+.hero-rule-line{width:60px;height:1px;background:var(--gold);opacity:.35;}
+.hero-rule-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);}
+.hero-sub{
+  font-size:13px;line-height:1.95;
+  color:rgba(26,18,8,.45);
+  max-width:480px;margin:0 auto 48px;
+  font-style:italic;font-family:'Bodoni Moda',serif;
+}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{
+  background:var(--gold);color:var(--noir);
+  padding:15px 40px;font-size:10px;
+  letter-spacing:.3em;text-transform:uppercase;
+  text-decoration:none;transition:background .3s;
+}
+.btn-gold:hover{background:var(--gold2);}
+.btn-ghost{
+  border:1px solid rgba(245,240,230,.2);
+  color:rgba(245,240,230,.5);
+  padding:15px 40px;font-size:10px;
+  letter-spacing:.3em;text-transform:uppercase;
+  text-decoration:none;transition:all .3s;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+/* HERO BOTTOM RIBBON */
+.hero-ribbon{
+  display:flex;
+  border-top:1px solid var(--line);
+  background:var(--noir3);
+  position:relative;z-index:2;
+}
+.hr-item{
+  flex:1;padding:26px 32px;text-align:center;
+  border-right:1px solid rgba(201,168,76,.08);
+}
+.hr-item:last-child{border-right:none;}
+.hr-n{
+  font-family:'Bodoni Moda',serif;
+  font-size:36px;font-weight:400;color:var(--gold);line-height:1;
+}
+.hr-l{
+  font-size:9px;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(26,18,8,.35);margin-top:6px;
+}
+
+/* ══ ABOUT: asymmetric editorial ══ */
+#about{
+  padding:110px 0;
+  background:var(--noir);
+  position:relative;overflow:hidden;
+}
+.about-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  max-width:1200px;margin:0 auto;padding:0 60px;
+  gap:80px;align-items:center;
+}
+.about-left{}
+.atag{
+  font-size:9px;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--gold3);display:flex;align-items:center;gap:14px;margin-bottom:22px;
+}
+.atag::before{content:'';width:24px;height:1px;background:var(--gold3);}
+.atitle{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(34px,4vw,58px);
+  font-weight:400;line-height:1.1;
+  color:var(--noir);margin-bottom:24px;
+}
+.atitle em{font-style:italic;color:var(--gold3);}
+.abody{
+  font-size:14px;line-height:2;
+  color:rgba(13,13,13,.5);margin-bottom:32px;
+}
+.afeats{display:flex;flex-direction:column;gap:0;}
+.afeat{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 0;border-bottom:1px solid var(--line);
+  font-size:13px;color:rgba(13,13,13,.55);
+}
+.afeat:first-child{border-top:1px solid var(--line);}
+.afeat-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;min-width:5px;}
+
+.about-right{position:relative;}
+.rating-card{
+  background:var(--noir);padding:52px 44px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.rating-card::before{
+  content:'';position:absolute;
+  top:16px;left:16px;right:16px;bottom:16px;
+  border:1px solid rgba(201,168,76,.12);
+  pointer-events:none;
+}
+.rc-tag{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:rgba(201,168,76,.5);margin-bottom:20px;}
+.rc-n{
+  font-family:'Bodoni Moda',serif;
+  font-size:88px;color:var(--gold);line-height:1;font-weight:400;
+}
+.rc-stars{font-size:16px;letter-spacing:4px;color:var(--gold);margin:10px 0 6px;}
+.rc-reviews{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,230,.2);}
+.rc-rule{width:48px;height:1px;background:var(--gold);opacity:.25;margin:28px auto;}
+.rc-quote{
+  font-family:'Bodoni Moda',serif;font-style:italic;
+  font-size:15px;color:rgba(245,240,230,.4);
+  line-height:1.7;max-width:260px;margin:0 auto;
+}
+
+/* ══ MENU / PACKAGES ══ */
+#menu{background:#2C1F0E;padding:110px 0;}
+.menu-wrap{max-width:1200px;margin:0 auto;padding:0 60px;}
+.menu-header{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:end;margin-bottom:64px;
+}
+.menu-header-left .atag{color:var(--gold);}
+.menu-header-left .atag::before{background:var(--gold);}
+.menu-header-left .atitle{color:var(--cream);}
+.menu-header-left .atitle em{color:var(--gold2);}
+.menu-header-right p{font-size:14px;line-height:2;color:rgba(26,18,8,.4);font-style:italic;font-family:'Bodoni Moda',serif;}
+
+/* MENU TABS */
+.menu-tabs{display:flex;gap:2px;margin-bottom:2px;}
+.menu-tab{
+  padding:12px 28px;font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  color:rgba(245,240,230,.3);
+  transition:all .3s;
+}
+.menu-tab.active,.menu-tab:hover{
+  background:var(--gold);color:var(--noir);
+  border-color:var(--gold);
+}
+.menu-panel{display:none;}
+.menu-panel.active{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.menu-item{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.05);
+  padding:32px 28px;transition:border-color .3s,background .3s;
+}
+.menu-item:hover{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.2);}
+.mi-cat{
+  font-size:9px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.mi-name{
+  font-family:'Bodoni Moda',serif;
+  font-size:18px;font-weight:400;color:var(--cream);
+  margin-bottom:8px;
+}
+.mi-desc{font-size:12px;line-height:1.8;color:rgba(245,240,230,.3);}
+.mi-price{
+  font-family:'Bodoni Moda',serif;
+  font-size:22px;color:var(--gold);margin-top:16px;
+}
+
+/* ══ PACKAGES ══ */
+#packages{padding:110px 0;background:var(--cream2);}
+.pkg-wrap{max-width:1200px;margin:0 auto;padding:0 60px;}
+.pkg-header{text-align:center;margin-bottom:64px;}
+.pkg-header .atag{justify-content:center;}
+.pkg-header .atag::before{display:none;}
+.pkg-header .atag::after{content:'';width:24px;height:1px;background:var(--gold3);}
+.pkg-header .atitle{max-width:500px;margin:0 auto;}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.pkg-card{
+  background:#1A1208;
+  padding:48px 36px;position:relative;overflow:hidden;
+  transition:transform .35s;
+}
+.pkg-card:hover{transform:translateY(-6px);}
+.pkg-card::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold3),var(--gold2));
+}
+.pkg-ico{font-size:30px;margin-bottom:22px;display:block;}
+.pkg-name{
+  font-family:'Bodoni Moda',serif;
+  font-size:22px;color:var(--cream);font-weight:400;
+  margin-bottom:10px;
+}
+.pkg-desc{font-size:13px;line-height:1.9;color:rgba(245,240,230,.35);margin-bottom:24px;}
+.pkg-tag{
+  display:inline-block;
+  border:1px solid rgba(201,168,76,.25);
+  padding:7px 16px;
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);
+}
+
+/* ══ QUOTE BAND ══ */
+.quoteband{
+  background:var(--noir3);
+  padding:80px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:60px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.qb-left{
+  font-family:'Bodoni Moda',serif;font-style:italic;
+  font-size:clamp(20px,2.8vw,34px);
+  color:var(--cream);line-height:1.4;
+  max-width:520px;
+}
+.qb-left::before{
+  content:'"';display:block;
+  font-size:64px;color:var(--gold);line-height:.7;
+  margin-bottom:12px;opacity:.6;
+}
+.qb-right{text-align:right;min-width:200px;}
+.qb-rating{
+  font-family:'Bodoni Moda',serif;
+  font-size:52px;color:var(--gold);line-height:1;
+}
+.qb-src{
+  font-size:9px;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(13,13,13,.35);margin-top:8px;
+}
+
+/* ══ BOOKING ══ */
+#booking{background:var(--noir2);padding:110px 0;}
+.booking-wrap{
+  max-width:1200px;margin:0 auto;padding:0 60px;
+  display:grid;grid-template-columns:1fr 1.1fr;gap:80px;
+}
+.bk-left .atag{color:var(--gold);}
+.bk-left .atag::before{background:var(--gold);}
+.bk-left .atitle{color:var(--cream);}
+.bk-left .atitle em{color:var(--gold2);}
+.bk-left .abody{color:rgba(245,240,230,.3);margin-bottom:36px;}
+.bk-info{display:flex;flex-direction:column;gap:0;}
+.bk-row{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:16px 0;border-bottom:1px solid rgba(201,168,76,.1);
+}
+.bk-row:first-child{border-top:1px solid rgba(201,168,76,.1);}
+.bk-ico{font-size:14px;min-width:20px;opacity:.5;margin-top:1px;}
+.bk-key{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(201,168,76,.4);display:block;margin-bottom:3px;}
+.bk-val{font-size:13px;color:rgba(245,240,230,.55);line-height:1.7;}
+.bk-val a{color:var(--gold);text-decoration:none;}
+
+.bk-right h3{
+  font-family:'Bodoni Moda',serif;
+  font-size:26px;color:var(--cream);font-weight:400;margin-bottom:8px;
+}
+.bk-right p{font-size:13px;font-style:italic;color:rgba(245,240,230,.25);margin-bottom:28px;font-family:'Bodoni Moda',serif;}
+.f-g{margin-bottom:12px;}
+.f-l{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(201,168,76,.4);display:block;margin-bottom:6px;}
+.f-i{
+  width:100%;background:rgba(245,240,230,.05);
+  border:1px solid rgba(201,168,76,.15);
+  padding:13px 16px;font-family:'DM Sans',sans-serif;
+  font-size:13px;color:var(--cream);outline:none;
+  transition:border-color .3s,background .3s;
+}
+.f-i:focus{border-color:var(--gold);background:rgba(201,168,76,.07);}
+.f-i::placeholder{color:rgba(245,240,230,.18);}
+.f-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.f-sub{
+  width:100%;margin-top:6px;background:var(--gold);
+  border:none;padding:15px;
+  font-family:'DM Sans',sans-serif;font-size:10px;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--noir);transition:background .3s;
+}
+.f-sub:hover{background:var(--gold2);}
+
+/* ══ FOOTER ══ */
+footer{
+  background:#1A1208;
+  border-top:1px solid rgba(184,135,10,.15);
+  padding:60px 60px 28px;
+}
+.ft-inner{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:52px;padding-bottom:40px;
+  border-bottom:1px solid rgba(201,168,76,.08);
+  margin-bottom:24px;
+}
+.ft-logo{
+  font-family:'Bodoni Moda',serif;font-style:italic;
+  font-size:22px;color:var(--cream);margin-bottom:6px;
+}
+.ft-logo em{color:var(--gold);}
+.ft-sub{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,.4);margin-bottom:14px;}
+.ft-desc{font-size:13px;font-style:italic;color:rgba(245,240,230,.2);line-height:1.8;max-width:230px;font-family:'Bodoni Moda',serif;}
+.ft-col h4{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.ft-col ul{list-style:none;}
+.ft-col li{margin-bottom:9px;}
+.ft-col a{font-size:12px;color:rgba(245,240,230,.22);text-decoration:none;transition:color .3s;}
+.ft-col a:hover{color:var(--gold);}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-copy{font-size:10px;color:rgba(245,240,230,.15);}
+.ft-ig{font-size:10px;color:rgba(201,168,76,.4);letter-spacing:.1em;}
+
+.wa{
+  position:fixed;bottom:26px;right:26px;z-index:90;
+  background:#25D366;width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.35);
+  transition:transform .3s;animation:wap 2.5s infinite;
+}
+.wa:hover{transform:scale(1.1);}
+@keyframes wap{0%,100%{box-shadow:0 6px 20px rgba(37,211,102,.35);}50%{box-shadow:0 6px 36px rgba(37,211,102,.6);}}
+
+.rev{opacity:1;transform:none;transition:opacity .75s,transform .75s;}
+.rev.pre{opacity:0;transform:translateY(22px);}
+.rev.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .hero-body{padding:40px 20px;}
+  .hero-corner{display:none;}
+  .hero-ribbon{flex-direction:column;}
+  .hr-item{border-right:none;border-bottom:1px solid rgba(201,168,76,.08);}
+  .about-inner,.menu-header,.booking-wrap,.ft-inner{grid-template-columns:1fr;gap:40px;padding:0 20px;}
+  .menu-wrap,.pkg-wrap{padding:0 20px;}
+  .menu-panel.active,.pkg-grid{grid-template-columns:1fr;}
+  .quoteband{flex-direction:column;padding:60px 20px;}
+  .qb-right{text-align:left;}
+  footer{padding:40px 20px 24px;}
+  .ft-inner{grid-template-columns:1fr 1fr;}
+  .ft-bottom{flex-direction:column;gap:10px;padding:0 20px;}
+  .menu-tabs{flex-wrap:wrap;}
+  .f-2{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="c"></div>
+<div id="cr"></div>
+<a href="https://wa.me/62" class="wa" target="_blank">💬</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><em>Le</em> Verre</div>
+  <ul class="nav-links">
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#packages">Package</a></li>
+    <li><a href="#booking">Reservasi</a></li>
+  </ul>
+  <a href="#booking" class="nav-res">Reservasi</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-corner tl"></div>
+  <div class="hero-corner tr"></div>
+  <div class="hero-corner bl"></div>
+  <div class="hero-corner br"></div>
+
+  <div class="hero-body">
+    <div class="hero-tag">Restaurant & Lounge · Solo Baru</div>
+    <div class="hero-name">Le Verre</div>
+    <h1 class="hero-h1">Fine<br><em>Dining</em><br>Solo.</h1>
+    <div class="hero-rule">
+      <div class="hero-rule-line"></div>
+      <div class="hero-rule-diamond"></div>
+      <div class="hero-rule-line"></div>
+    </div>
+    <p class="hero-sub">Pengalaman makan malam yang tak terlupakan — di mana ambiance Prancis bertemu kehangatan Solo. Dine-in, Romantic Dinner, dan Private Event tersedia.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-gold">Buat Reservasi</a>
+      <a href="#menu" class="btn-ghost">Lihat Menu</a>
+    </div>
+  </div>
+
+  <div class="hero-ribbon">
+    <div class="hr-item"><div class="hr-n">4.7★</div><div class="hr-l">Rating Google</div></div>
+    <div class="hr-item"><div class="hr-n">266</div><div class="hr-l">Ulasan Tamu</div></div>
+    <div class="hr-item"><div class="hr-n">75–100K</div><div class="hr-l">Harga Per Orang</div></div>
+    <div class="hr-item"><div class="hr-n">10–22</div><div class="hr-l">Jam Buka · Daily</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-left">
+      <div class="atag rev">Tentang Le Verre</div>
+      <h2 class="atitle rev">Ambiance <em>istimewa,</em><br>rasa yang berbicara.</h2>
+      <p class="abody rev">Le Verre Restaurant & Lounge hadir sebagai ruang makan premium di Solo Baru — dengan interior high ceiling, pencahayaan hangat, dan menu yang diracik dengan penuh perhatian. Tempat sempurna untuk makan malam berdua, perayaan ulang tahun, hingga gathering eksklusif.</p>
+      <div class="afeats">
+        <div class="afeat rev"><div class="afeat-dot"></div>Dine-in & Takeout tersedia setiap hari</div>
+        <div class="afeat rev"><div class="afeat-dot"></div>Romantic Dinner & Birthday Package</div>
+        <div class="afeat rev"><div class="afeat-dot"></div>Workshop & Private Event</div>
+        <div class="afeat rev"><div class="afeat-dot"></div>Lokasi strategis di Solo Baru, Jawa Tengah</div>
+        <div class="afeat rev"><div class="afeat-dot"></div>Last Order pukul 21.00</div>
+      </div>
+    </div>
+    <div class="about-right rev">
+      <div class="rating-card">
+        <div class="rc-tag">Google Maps Rating</div>
+        <div class="rc-n">4.7</div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-reviews">266 ulasan tamu</div>
+        <div class="rc-rule"></div>
+        <p class="rc-quote">"Food, ambiance, service — 5 stars. Pengalaman makan malam yang luar biasa."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="menu-wrap">
+    <div class="menu-header">
+      <div class="menu-header-left">
+        <div class="atag rev">Menu Pilihan</div>
+        <h2 class="atitle rev">Cita rasa<br><em>yang tak biasa.</em></h2>
+      </div>
+      <div class="menu-header-right">
+        <p class="rev">Setiap hidangan dibuat dengan bahan pilihan dan teknik memasak yang diperhatikan sampai detail terkecil.</p>
+      </div>
+    </div>
+
+    <div class="menu-tabs rev">
+      <div class="menu-tab active" onclick="switchTab('main')">Main Course</div>
+      <div class="menu-tab" onclick="switchTab('pasta')">Pasta & Western</div>
+      <div class="menu-tab" onclick="switchTab('drinks')">Minuman</div>
+    </div>
+
+    <div class="menu-panel active" id="tab-main">
+      <div class="menu-item rev"><div class="mi-cat">Unggas</div><div class="mi-name">Grilled BBQ Chicken</div><p class="mi-desc">Ayam panggang dengan saus BBQ smoky, disajikan dengan pilihan nasi atau kentang.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Unggas</div><div class="mi-name">Creamy Chicken</div><p class="mi-desc">Potongan ayam dalam saus krim keju yang lembut dan kaya rasa.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Unggas</div><div class="mi-name">Nanban Chicken</div><p class="mi-desc">Ayam gaya Jepang dengan saus tartar dan sentuhan citrus yang menyegarkan.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Burger</div><div class="mi-name">Spicy Chicken Burger</div><p class="mi-desc">Burger ayam crispy dengan lapisan saus pedas dan sayuran segar.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Oriental</div><div class="mi-name">Char Kwey Teow</div><p class="mi-desc">Kwetiau goreng gaya Penang dengan udang, tauge, dan kecap khas.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Dessert</div><div class="mi-name">Honey Toast</div><p class="mi-desc">Roti brioche panggang dengan madu, es krim vanilla, dan topping pilihan.</p></div>
+    </div>
+
+    <div class="menu-panel" id="tab-pasta">
+      <div class="menu-item rev"><div class="mi-cat">Pasta</div><div class="mi-name">Aglio e Olio</div><p class="mi-desc">Pasta klasik Italia dengan bawang putih, olive oil, dan cabai merah kering.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Pasta</div><div class="mi-name">Spaghetti Rose Sauce</div><p class="mi-desc">Spaghetti dengan saus rose creamy yang kaya, perpaduan tomat dan krim.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Pasta</div><div class="mi-name">Chicken Schnitzel</div><p class="mi-desc">Ayam breaded gaya Austria, disajikan dengan kentang tumbuk dan saus mushroom.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Dessert</div><div class="mi-name">Pasta Balia</div><p class="mi-desc">Pasta spesial dengan saus herbal dan topping pilihan chef.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Dessert</div><div class="mi-name">Brownies</div><p class="mi-desc">Brownies coklat hangat dengan taburan gula halus, disajikan dengan es krim.</p></div>
+    </div>
+
+    <div class="menu-panel" id="tab-drinks">
+      <div class="menu-item rev"><div class="mi-cat">Infused</div><div class="mi-name">Free Infused Water</div><p class="mi-desc">Air infused buah segar, tersedia di setiap paket buffet Le Verre.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Teh</div><div class="mi-name">Free Java Tea</div><p class="mi-desc">Teh Jawa hangat khas, pelengkap sempurna untuk makan siang.</p></div>
+      <div class="menu-item rev"><div class="mi-cat">Es Teh</div><div class="mi-name">Lemon Tea Ice</div><p class="mi-desc">Teh lemon dingin yang menyegarkan, tersedia di paket pilihan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="pkg-wrap">
+    <div class="pkg-header">
+      <div class="atag rev">Special Packages</div>
+      <h2 class="atitle rev">Setiap momen,<br><em>layak dirayakan.</em></h2>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card rev">
+        <span class="pkg-ico">🕯️</span>
+        <div class="pkg-name">Romantic Dinner</div>
+        <p class="pkg-desc">Makan malam berdua dengan dekorasi meja spesial, lilin, dan menu pilihan chef. Cocok untuk anniversary dan hari spesial.</p>
+        <div class="pkg-tag">IDR 250.000 / couple</div>
+      </div>
+      <div class="pkg-card rev">
+        <span class="pkg-ico">🎂</span>
+        <div class="pkg-name">Birthday Package</div>
+        <p class="pkg-desc">Rayakan ulang tahun dengan paket spesial termasuk dekorasi meja, menu pilihan, dan hadiah kejutan dari Le Verre.</p>
+        <div class="pkg-tag">Hubungi untuk harga</div>
+      </div>
+      <div class="pkg-card rev">
+        <span class="pkg-ico">🍽️</span>
+        <div class="pkg-name">Buffet Package</div>
+        <p class="pkg-desc">Mulai Rp 85.000 — nikmati hidangan lengkap dengan pilihan main, vegetable, starch, dan minuman gratis.</p>
+        <div class="pkg-tag">Mulai IDR 85.000 / pax</div>
+      </div>
+      <div class="pkg-card rev">
+        <span class="pkg-ico">🎪</span>
+        <div class="pkg-name">Fairytale Package</div>
+        <p class="pkg-desc">Paket dekorasi fairytale untuk momen yang benar-benar tak terlupakan — cocok untuk lamaran atau perayaan istimewa.</p>
+        <div class="pkg-tag">Hubungi untuk detail</div>
+      </div>
+      <div class="pkg-card rev">
+        <span class="pkg-ico">🎨</span>
+        <div class="pkg-name">Workshop</div>
+        <p class="pkg-desc">Workshop memasak dan barista di ruangan Le Verre yang nyaman. Cocok untuk gathering tim atau acara komunitas.</p>
+        <div class="pkg-tag">Jadwal fleksibel</div>
+      </div>
+      <div class="pkg-card rev">
+        <span class="pkg-ico">🎁</span>
+        <div class="pkg-name">Xmas & Hampers</div>
+        <p class="pkg-desc">Hampers dan paket spesial Natal dari Le Verre. Pilihan hadiah elegan untuk orang-orang terkasih.</p>
+        <div class="pkg-tag">Seasonal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<div class="quoteband">
+  <p class="qb-left rev">"Food, ambiance, service — 5 stars. Pengalaman makan yang benar-benar berbeda dari tempat lain di Solo."</p>
+  <div class="qb-right rev">
+    <div class="qb-rating">4.7★</div>
+    <div class="qb-src">266 ulasan · Google Maps</div>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="booking-wrap">
+    <div class="bk-left">
+      <div class="atag rev">Reservasi</div>
+      <h2 class="atitle rev">Pesan meja<br><em>sekarang.</em></h2>
+      <p class="abody rev">Reservasi via form atau langsung hubungi kami. Dengan reservasi, meja terjamin dan pengalaman Anda lebih nyaman.</p>
+      <div class="bk-info">
+        <div class="bk-row rev">
+          <span class="bk-ico">📍</span>
+          <div>
+            <span class="bk-key">Lokasi</span>
+            <span class="bk-val">JA 44 Cluster, Jl. Raya Solo Baru<br>Dusun I, Solo, Jawa Tengah 57552</span>
+          </div>
+        </div>
+        <div class="bk-row rev">
+          <span class="bk-ico">🕐</span>
+          <div>
+            <span class="bk-key">Jam Operasional</span>
+            <span class="bk-val">Setiap Hari · 10.00 – 22.00<br>Last Order pukul 21.00</span>
+          </div>
+        </div>
+        <div class="bk-row rev">
+          <span class="bk-ico">📱</span>
+          <div>
+            <span class="bk-key">Instagram</span>
+            <span class="bk-val"><a href="https://instagram.com/leverresolo">@leverresolo</a></span>
+          </div>
+        </div>
+        <div class="bk-row rev">
+          <span class="bk-ico">🔗</span>
+          <div>
+            <span class="bk-key">Info Lengkap</span>
+            <span class="bk-val"><a href="https://linktr.ee/leverrerestaurant">linktr.ee/leverrerestaurant</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bk-right">
+      <h3 class="rev">Form Reservasi</h3>
+      <p class="rev">Isi form di bawah dan kami akan konfirmasi segera.</p>
+      <div class="f-2">
+        <div class="f-g rev"><label class="f-l">Nama</label><input class="f-i" type="text" placeholder="Nama lengkap"></div>
+        <div class="f-g rev"><label class="f-l">WhatsApp</label><input class="f-i" type="tel" placeholder="08xx-xxxx-xxxx"></div>
+      </div>
+      <div class="f-g rev">
+        <label class="f-l">Keperluan</label>
+        <select class="f-i">
+          <option value="" disabled selected>Pilih keperluan</option>
+          <option>Dine-in reguler</option>
+          <option>Romantic Dinner</option>
+          <option>Birthday Package</option>
+          <option>Buffet Package</option>
+          <option>Fairytale Package</option>
+          <option>Workshop</option>
+          <option>Private Event</option>
+        </select>
+      </div>
+      <div class="f-2">
+        <div class="f-g rev"><label class="f-l">Tanggal</label><input class="f-i" type="date"></div>
+        <div class="f-g rev"><label class="f-l">Waktu</label><input class="f-i" type="time" min="10:00" max="21:00"></div>
+      </div>
+      <div class="f-g rev"><label class="f-l">Jumlah Tamu</label><input class="f-i" type="number" placeholder="2" min="1"></div>
+      <div class="f-g rev"><label class="f-l">Catatan Khusus</label><textarea class="f-i" rows="3" placeholder="Alergi, dekorasi khusus, atau permintaan lainnya..."></textarea></div>
+      <button class="f-sub rev">Kirim Reservasi</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-logo"><em>Le Verre</em> Restaurant</div>
+      <div class="ft-sub">& Lounge · Solo Baru</div>
+      <p class="ft-desc">Fine dining dan lounge premium di jantung Solo Baru. Tempat untuk momen yang tak terlupakan.</p>
+    </div>
+    <div class="ft-col">
+      <h4>Menu & Package</h4>
+      <ul>
+        <li><a href="#">Main Course</a></li>
+        <li><a href="#">Romantic Dinner</a></li>
+        <li><a href="#">Birthday Package</a></li>
+        <li><a href="#">Buffet Package</a></li>
+        <li><a href="#">Workshop</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="#">Reservasi</a></li>
+        <li><a href="#">@leverresolo</a></li>
+        <li><a href="#">Solo Baru, Jawa Tengah</a></li>
+        <li><a href="#">10.00 – 22.00 Daily</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2025 Le Verre Restaurant & Lounge · Solo Baru · Jawa Tengah</p>
+    <p class="ft-ig">@leverresolo · 4.7★ Google · 266 ulasan</p>
+  </div>
+</footer>
+
+<script>
+var c=document.getElementById('c'),cr=document.getElementById('cr');
+document.addEventListener('mousemove',function(e){
+  c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';
+  setTimeout(function(){cr.style.left=e.clientX+'px';cr.style.top=e.clientY+'px';},100);
+});
+
+function switchTab(tab){
+  document.querySelectorAll('.menu-tab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.menu-panel').forEach(function(p){p.classList.remove('active');});
+  event.target.classList.add('active');
+  document.getElementById('tab-'+tab).classList.add('active');
+}
+
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry,i){
+    if(entry.isIntersecting){
+      setTimeout(function(){
+        entry.target.classList.remove('pre');
+        entry.target.classList.add('in');
+      },i*70);
+    }
+  });
+},{threshold:0.07});
+document.querySelectorAll('.rev').forEach(function(el){el.classList.add('pre');obs.observe(el);});
+</script>
+</body>
+</html>
